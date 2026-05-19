@@ -53,5 +53,57 @@
             </section>
         </main>
 
+        <div class="stats-row" aria-label="Github stats">
+            <div class="stat-card">
+                <div class="stat-label">COMMITS THIS YEAR</div>
+                <div class="stat-value" id="stat-commits"></div>
+                <div class="stat-delta" id="stat-commits-delta"></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">REPOSITORIES</div>
+                <div class="stat-value" id="stat-repos"></div>
+                <div class="stat-delta" id="stat-repos-delta"></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">FOLLOWERS</div>
+                <div class="stat-value" id="stat-followers"></div>
+                <div class="stat-delta" id="stat-followers-delta"></div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-label">TOTAL STARS</div>
+                <div class="stat-value" id="stat-stars"></div>
+                <div class="stat-delta" id="stat-stars-delta"></div>
+            </div> 
+        </div>
+        <div class="section-label">CONTRIBUTION GRAPH — LAST 52 WEEKS</div>
+        <div class="contrib-wrap" aria-label="GitHub contribution graph">
+          <div class="contrib-grid" id="contrib-grid"></div>
+          <div class="contrib-footer">
+            <span class="contrib-total" id="contrib-total"><strong>—</strong> contributions in the last year</span>
+            <div class="contrib-legend" aria-label="Contribution legend">
+              <span>less</span>
+              <div class="leg-cell" style="background:var(--bg2);border:1px solid var(--border)"></div>
+              <div class="leg-cell" style="background:rgba(0,230,118,0.18)"></div>
+              <div class="leg-cell" style="background:rgba(0,230,118,0.42)"></div>
+              <div class="leg-cell" style="background:rgba(0,230,118,0.68)"></div>
+              <div class="leg-cell" style="background:var(--green)"></div>
+              <span>more</span>
+            </div>
+          </div>
+        </div>
+     
+        <div class="section-label">RECENT GITHUB ACTIVITY</div>
+        <div id="activity-list" class="activity-list" aria-label="Recent GitHub activity">
+          <div class="loading-spinner" style="padding:20px 18px;">
+            <i class="ti ti-loader-2"></i> fetching activity…
+          </div>
+        </div>
+      </main>
+
+
+
     </body>
 </html>
