@@ -1,4 +1,94 @@
 /* ══════════════════════════════════════════
    topbar.css — sticky navigation bar
 ══════════════════════════════════════════ */
- 
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 56px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(10,11,13,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+   
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+   
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+   
+  .site-name {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    color: var(--text);
+  }
+  .site-name .accent { color: var(--green); }
+   
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+   
+  .nav-link {
+    color: var(--text3);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    border: 1px solid transparent;
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+    cursor: pointer;
+    user-select: none;
+  }
+  .nav-link:hover  { color: var(--text2); }
+  .nav-link.active {
+    color: var(--green);
+    border-color: rgba(0,230,118,0.25);
+    background: var(--green-dim2);
+  }
+   
+  .open-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border: 1px solid rgba(0,230,118,0.22);
+    border-radius: 20px;
+    font-size: 11px;
+    color: var(--green);
+    margin-left: 12px;
+    letter-spacing: 0.04em;
+  }
+  .open-badge .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+   
+  @media (max-width: 768px) {
+    .topbar { padding: 0 16px; }
+    .open-badge { display: none; }
+  }
+   
+  @media (max-width: 480px) {
+    .nav-link { padding: 5px 8px; font-size: 11px; }
+  }
