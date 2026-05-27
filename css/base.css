@@ -1,10 +1,8 @@
-
 /* ══════════════════════════════════════════
    base.css — variables, reset, shared layout
 ══════════════════════════════════════════ */
 
-:root{
-    --bg: #0a0b0d;
+:root {
     --bg:          #0a0b0d;
     --bg2:         #0f1115;
     --bg3:         #14161c;
@@ -27,33 +25,104 @@
     --radius:      8px;
     --radius-lg:   12px;
     --transition:  0.18s ease;
-
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
-html { scroll-behavior: smooth; }
- 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--mono);
-  font-size: 13px;
-  line-height: 1.6;
-  min-height: 100vh;
-}
- 
-a { color: inherit; text-decoration: none; }
-button { font-family: var(--mono); cursor: pointer; }
- 
-/* ── Scrollbar ── */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--bg2); }
-::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--border3); }
- 
-/* ── Animations ── */
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.35; }
-}
+  }
+  
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  html { scroll-behavior: smooth; }
+  
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  
+  a { color: inherit; text-decoration: none; }
+  button { font-family: var(--mono); cursor: pointer; }
+  
+  /* ── Scrollbar ── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg2); }
+  ::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--border3); }
+  
+  /* ── Animations ── */
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.35; }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @keyframes shimmer {
+    0%   { background-position: -400px 0; }
+    100% { background-position:  400px 0; }
+  }
+  
+  /* ── Page sections ── */
+  .page {
+    display: none;
+    padding: 36px 32px 48px;
+    animation: fadeUp 0.22s ease;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .page.active { display: block; }
+  
+  /* ── Section label ── */
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    color: var(--text3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  
+  /* ── Loading spinner ── */
+  .loading-spinner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--text3);
+    padding: 20px 0;
+  }
+  .loading-spinner i { animation: spin 1s linear infinite; color: var(--green); }
+  
+  /* ── Terminal footer ── */
+  .terminal-footer {
+    border-top: 1px solid var(--border);
+    padding: 10px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--text3);
+    background: var(--bg);
+  }
+  .term-left  { display: flex; align-items: center; gap: 8px; }
+  .term-right { display: flex; align-items: center; gap: 16px; }
+  .term-prompt { color: var(--green); }
+  .term-link { color: var(--text3); transition: color var(--transition); }
+  .term-link:hover { color: var(--green); }
+  
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .page { padding: 24px 16px 40px; }
+  }
