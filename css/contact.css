@@ -85,7 +85,6 @@
     padding: 10px 14px;
     outline: none;
     transition: border-color var(--transition);
-    -webkit-appearance: none;
   }
   .form-input:focus,
   .form-textarea:focus    { border-color: rgba(0,230,118,0.4); }
