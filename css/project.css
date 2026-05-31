@@ -1,0 +1,121 @@
+/* ══════════════════════════════════════════
+   projects.css — project cards & badges
+══════════════════════════════════════════ */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .project-card {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color var(--transition), transform var(--transition);
+    display: flex;
+    flex-direction: column;
+  }
+  .project-card:hover {
+    border-color: var(--border2);
+    transform: translateY(-2px);
+  }
+  .project-card.pinned::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--green);
+  }
+  
+  .proj-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .proj-name-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  
+  .pinned-badge {
+    font-size: 10px;
+    letter-spacing: 0.07em;
+    color: var(--green);
+    background: var(--green-dim);
+    padding: 2px 7px;
+    border-radius: 3px;
+  }
+  
+  .proj-name {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .proj-name a:hover { color: var(--green); }
+  
+  /* ── Uptime badges ── */
+  .uptime-badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    padding: 4px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .uptime-badge.up       { color: var(--green); border: 1px solid rgba(0,230,118,0.28); background: var(--green-dim2); }
+  .uptime-badge.down     { color: var(--red);   border: 1px solid rgba(255,82,82,0.28);  background: rgba(255,82,82,0.05); }
+  .uptime-badge.building { color: var(--amber); border: 1px solid rgba(255,202,40,0.28); background: rgba(255,202,40,0.05); }
+  .uptime-badge.archived { color: var(--text3); border: 1px solid var(--border); }
+  
+  .uptime-dot { width: 6px; height: 6px; border-radius: 50%; }
+  .uptime-badge.up       .uptime-dot { background: var(--green); animation: pulse 1.5s ease-in-out infinite; }
+  .uptime-badge.down     .uptime-dot { background: var(--red); }
+  .uptime-badge.building .uptime-dot { background: var(--amber); animation: pulse 1s ease-in-out infinite; }
+  .uptime-badge.archived .uptime-dot { background: var(--text3); }
+  
+  .proj-desc {
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    flex: 1;
+  }
+  
+  .proj-meta { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+  
+  .proj-lang { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text3); }
+  .lang-dot  { width: 9px; height: 9px; border-radius: 50%; }
+  
+  .proj-stat {
+    font-size: 12px;
+    color: var(--text3);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  
+  .proj-links { display: flex; gap: 8px; }
+  
+  .proj-link {
+    font-size: 11px;
+    color: var(--text3);
+    padding: 5px 11px;
+    border: 1px solid var(--border2);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color var(--transition), border-color var(--transition);
+  }
+  .proj-link:hover { color: var(--green); border-color: rgba(0,230,118,0.3); }
+  .proj-link i { font-size: 13px; }
+  
+  @media (max-width: 768px) {
+    .projects-grid { grid-template-columns: 1fr; }
+  }
