@@ -1,0 +1,33 @@
+/* ══════════════════════════════════════════
+   skills.css — filterable skill matrix
+   ══════════════════════════════════════════ */
+
+.skills-filter{
+    display : flex;
+    flex-wrap : wrap;
+    gap : 0.5em;
+    margin-bottom : 22px;
+
+}
+
+.filter-btn{
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 5px 10px;
+    border : 1px solid var(--fg);
+    border-radius: 4px;
+    background : transparent;
+    color : var(--fg);
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.filter-btn:hover  { color: var(--text2); border-color: var(--border3); }
+.filter-btn.active { color: var(--green); border-color: rgba(0,230,118,0.38); background: var(--green-dim2); }
+ 
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
