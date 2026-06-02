@@ -7,7 +7,7 @@
 const CONFIG ={
 
     github:{
-        username:"fawwazmurtaza7362",
+        username:"fawwazmurtaza7262",
         token: "",
     },
 

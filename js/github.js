@@ -30,9 +30,9 @@ const GitHub = (() => {
 
             const Totalstars = repos.reduce((acc, r) => acc + r.stargazers_count, 0);
             setStatCard('stat-repos',     user.public_repos, `updated ${relTime(user.updated_at)}`);
-      setStatCard('stat-followers', user.followers,    '');
-      setStatCard('stat-stars',     totalStars,        'across all public repos');
-      setStatCard('stat-commits',   '—',               'see contribution graph');
+            setStatCard('stat-followers', user.followers,    '');
+            setStatCard('stat-stars',     totalStars,        'across all public repos');
+            setStatCard('stat-commits',   '—',               'see contribution graph');
  
       return repos;
     } catch (e) {
